@@ -14,6 +14,7 @@ const path = require("path");
 const fs = require("fs-extra");
 const process = require("process");
 const tar = require("tar");
+const os = require("os");
 
 function extractdevToolsTarLib(tarPath, dest) {
     return tar.extract({
@@ -34,7 +35,7 @@ function setupTargetFolder() {
 
 function setupDevtoolsNativeAddOn() {
     console.log("Setting up Adobe devTools node native add-on library... ");
-    const arch = process.env.build_arch;
+    const arch = os.arch();     
     console.log(`Arch is ${arch}`);
     const targetFolder = setupTargetFolder();
     const fileName = arch !== "arm64" ? `DevtoolsHelper-v1.1.0-node-${process.platform}.tar.gz` : `DevtoolsHelper-v1.1.0-node-${process.platform}-arm64.tar.gz`;
