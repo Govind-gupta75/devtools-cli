@@ -17,10 +17,6 @@ function generateDevtoolsAppPacakge() {
     let uxpDevtoolAppDir =  require.resolve("@adobe/uxp-inspect-frontend/package.json");
     uxpDevtoolAppDir = path.dirname(uxpDevtoolAppDir);
 
-    execSync("npm install", {
-        cwd: uxpDevtoolAppDir,
-        stdio: [ "inherit", "inherit", "inherit" ]
-    });
     if(os.arch() === "arm64") {
         execSync("npm run package-arm64", {
             cwd: uxpDevtoolAppDir,
