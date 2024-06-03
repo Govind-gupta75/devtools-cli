@@ -22,12 +22,12 @@ function generateDevtoolsAppPacakge() {
         stdio: [ "inherit", "inherit", "inherit" ]
     });
     if(os.arch() === "arm64") {
-        execSync("electron-builder --dir --arm64", {
+        execSync("npm run package-arm64", {
             cwd: uxpDevtoolAppDir,
             stdio: [ "inherit", "inherit", "inherit" ]
         });
     }else {
-        execSync("electron-builder --dir --x64", {
+        execSync("npm run package", {
             cwd: uxpDevtoolAppDir,
             stdio: [ "inherit", "inherit", "inherit" ]
         });
