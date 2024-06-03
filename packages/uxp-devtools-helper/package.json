@@ -1,6 +1,6 @@
 {
   "name": "@adobe/uxp-devtools-helper",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Adobe Devtools helper package used by uxp cli",
   "main": "src/DevToolsHelper.js",
   "scripts": {
