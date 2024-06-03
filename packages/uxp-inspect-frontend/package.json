@@ -13,8 +13,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "cleanup": "rimraf dist/",
-    "package": "yarn cleanup && electron-builder --dir --x64",
-    "package-arm64": "export build_arch=arm64 && yarn cleanup && electron-builder --dir --arm64",
+    "package": "electron-builder --dir --x64",
+    "package-arm64": "electron-builder --dir --arm64",
     "postinstall": "node scripts/setup.js"
   },
   "build": {

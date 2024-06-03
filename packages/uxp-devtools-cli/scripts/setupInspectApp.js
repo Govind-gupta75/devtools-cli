@@ -17,17 +17,17 @@ function generateDevtoolsAppPacakge() {
     let uxpDevtoolAppDir =  require.resolve("@adobe/uxp-inspect-frontend/package.json");
     uxpDevtoolAppDir = path.dirname(uxpDevtoolAppDir);
 
-    execSync("yarn install", {
+    execSync("npm install", {
         cwd: uxpDevtoolAppDir,
         stdio: [ "inherit", "inherit", "inherit" ]
     });
     if(os.arch() === "arm64") {
-        execSync("yarn package-arm64", {
+        execSync("electron-builder --dir --arm64", {
             cwd: uxpDevtoolAppDir,
             stdio: [ "inherit", "inherit", "inherit" ]
         });
     }else {
-        execSync("yarn package", {
+        execSync("electron-builder --dir --x64", {
             cwd: uxpDevtoolAppDir,
             stdio: [ "inherit", "inherit", "inherit" ]
         });
